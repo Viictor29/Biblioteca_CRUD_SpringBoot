@@ -27,25 +27,27 @@ public class EjemplaresController {
 
     //Obtener id
     @GetMapping("/{id}")
-    public ResponseEntity<Ejemplar> getId(@PathVariable int id) {
+    public ResponseEntity<Ejemplar> getIdEjemplar(@PathVariable int id) {
         Ejemplar ejemplar = ejemplaresRepository.findById(id).get();
         return ResponseEntity.ok(ejemplar);
     }
 
     //Crear ejemplar
-    @PostMapping("ejemplar")
+    @PostMapping("/ejemplar")
     public ResponseEntity<Ejemplar> addLibro(@RequestBody Ejemplar ejemplar) {
         Ejemplar ejemplarPersistido = ejemplaresRepository.save(ejemplar);
         return ResponseEntity.ok(ejemplarPersistido);
     }
 
-    @PostMapping("{id}")
+    //Actualizar Ejemplar
+    @PostMapping("/{id}")
     public ResponseEntity<Ejemplar> actualizarEjemplar(@PathVariable int id, @RequestBody Ejemplar ejemplar) {
         Ejemplar ejemplarPersistido = ejemplaresRepository.save(ejemplar);
         return ResponseEntity.ok(ejemplarPersistido);
     }
 
-    @DeleteMapping("{id}")
+    //Borrar Ejemplar
+    @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteEjemplar(@PathVariable int id) {
         ejemplaresRepository.deleteById(id);
         String mensaje = "Ejemplar con id " + id + " eliminado correctamente.";
