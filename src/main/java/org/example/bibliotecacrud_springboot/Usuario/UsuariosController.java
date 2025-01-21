@@ -38,8 +38,8 @@ public class UsuariosController {
     }
 
     //Actualizar Prestamo
-    @PostMapping("/{id}")
-    public ResponseEntity<Usuario> actualizarUsuario(@PathVariable int id, @RequestBody Usuario usuario) {
+    @PutMapping("/{id}")
+    public ResponseEntity<Usuario> actualizarUsuario(@RequestBody Usuario usuario) {
         Usuario usuarioPersistido = usuariosRepository.save(usuario);
         return ResponseEntity.ok(usuarioPersistido);
     }

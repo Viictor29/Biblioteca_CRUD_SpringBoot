@@ -40,8 +40,8 @@ public class EjemplaresController {
     }
 
     //Actualizar Ejemplar
-    @PostMapping("/{id}")
-    public ResponseEntity<Ejemplar> actualizarEjemplar(@PathVariable int id, @RequestBody Ejemplar ejemplar) {
+    @PutMapping("/{id}")
+    public ResponseEntity<Ejemplar> actualizarEjemplar(@RequestBody Ejemplar ejemplar) {
         Ejemplar ejemplarPersistido = ejemplaresRepository.save(ejemplar);
         return ResponseEntity.ok(ejemplarPersistido);
     }

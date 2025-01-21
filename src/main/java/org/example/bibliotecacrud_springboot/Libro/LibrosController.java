@@ -41,8 +41,8 @@ public class LibrosController {
     }
 
     //PUT. UPDATE
-    @PostMapping("/{isbn}")
-    public ResponseEntity<Libro> actualizarLibro(@PathVariable String isbn, @RequestBody Libro libro) {
+    @PutMapping("/{isbn}")
+    public ResponseEntity<Libro> actualizarLibro(@RequestBody Libro libro) {
         Libro libroPersistido = librosRepository.save(libro);
         return ResponseEntity.ok(libroPersistido);
     }

@@ -39,8 +39,8 @@ public class PrestamosController {
     }
 
     //Actualizar Prestamo
-    @PostMapping("/{id}")
-    public ResponseEntity<Prestamo> actualizarPrestamo(@PathVariable int id, @RequestBody Prestamo prestamo) {
+    @PutMapping("/{id}")
+    public ResponseEntity<Prestamo> actualizarPrestamo(@RequestBody Prestamo prestamo) {
         Prestamo prestamoPersistido = prestamosRepository.save(prestamo);
         return ResponseEntity.ok(prestamoPersistido);
     }
