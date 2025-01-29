@@ -1,5 +1,6 @@
 package org.example.bibliotecacrud_springboot.Libro;
 
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -34,7 +35,7 @@ public class LibrosController {
 
     //POST. INSERT
     @PostMapping("/libro")
-    public ResponseEntity<Libro> addLibro(@RequestBody Libro libro) {
+    public ResponseEntity<Libro> addLibro(@Valid @RequestBody Libro libro) {
         System.out.println("Entra aqui");
         Libro libroPersistido = this.librosRepository.save(libro);
         return ResponseEntity.ok(libroPersistido);
@@ -42,7 +43,7 @@ public class LibrosController {
 
     //PUT. UPDATE
     @PutMapping("/{isbn}")
-    public ResponseEntity<Libro> actualizarLibro(@RequestBody Libro libro) {
+    public ResponseEntity<Libro> actualizarLibro(@Valid @RequestBody Libro libro) {
         Libro libroPersistido = librosRepository.save(libro);
         return ResponseEntity.ok(libroPersistido);
     }
