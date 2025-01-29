@@ -1,11 +1,12 @@
 package org.example.bibliotecacrud_springboot.Prestamo;
 
 import jakarta.persistence.*;
+import lombok.Data;
 import org.example.bibliotecacrud_springboot.Ejemplar.Ejemplar;
 import org.example.bibliotecacrud_springboot.Usuario.Usuario;
 
 import java.time.LocalDate;
-
+@Data
 @Entity
 public class Prestamo {
     @Id
@@ -23,43 +24,4 @@ public class Prestamo {
     private LocalDate fechaInicio;
     private LocalDate fechaDevolucion;
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public Usuario getUsuario() {
-        return usuario;
-    }
-
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
-    }
-
-    public Ejemplar getEjemplar() {
-        return ejemplar;
-    }
-
-    public void setEjemplar(Ejemplar ejemplar) {
-        this.ejemplar = ejemplar;
-    }
-
-    public LocalDate getFechaInicio() {
-        return fechaInicio;
-    }
-
-    public void setFechaInicio(LocalDate fechaInicio) {
-        this.fechaInicio = fechaInicio;
-    }
-
-    public LocalDate getFechaDevolucion() {
-        return fechaDevolucion;
-    }
-
-    public void setFechaDevolucion(LocalDate fechaDevolucion) {
-        this.fechaDevolucion = fechaDevolucion;
-    }
 }
