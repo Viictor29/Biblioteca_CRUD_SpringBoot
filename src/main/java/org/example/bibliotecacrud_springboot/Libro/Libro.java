@@ -22,7 +22,7 @@ public class Libro {
     @Id
     @NotBlank(message = "El campo ISBN no puede estar vacio")
     @Size(max = 20)
-    @Pattern(regexp = "^(?:\\d{3}[-\\s]?)?\\d{1,5}[-\\s]?\\d{1,7}[-\\s]?\\d{1,7}[-\\s]?\\d{1,3}[\\dX]$", message = "ISBN con 4 mayusculas")
+    @Pattern(regexp = "^(?:\\d{3}[-\\s]?)?\\d{1,5}[-\\s]?\\d{1,7}[-\\s]?\\d{1,7}[-\\s]?\\d{1,3}[\\dX]$", message = "ISBN incorrecto")
     @Column (name = "isbn", nullable = false, length = 20)
     private String isbn;
 
